@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
 }
 
 /* Header styling */
@@ -17,11 +18,21 @@ header {
     justify-content: center;
     position: relative; /* For popup positioning */
     overflow: hidden; /* Prevents overflow */
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: scale(1.02); /* Slight scaling effect on hover */
 }
 
 header .logo {
     height: 50px; /* Adjust the height of the logo */
     margin-right: 20px; /* Space between logo and heading */
+    transition: transform 0.3s ease;
+}
+
+header .logo:hover {
+    transform: rotate(360deg); /* Full rotation on hover */
 }
 
 /* Popup notification styling */
@@ -34,13 +45,31 @@ header .logo {
     padding: 10px;
     border-radius: 5px;
     display: none; /* Hidden by default */
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s ease;
+    z-index: 10;
 }
 
-/* Show popup on hover */
 header:hover .popup {
     display: block; /* Show when header is hovered */
     opacity: 1; /* Fade in effect */
+    transform: scale(1.05); /* Slight scaling effect on display */
+}
+
+/* Footer styling */
+.footer {
+    background-color: #4A90E2; /* Same dynamic blue as header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer:hover {
+    background-color: #357ABD; /* Darken blue on hover */
+    transform: scale(1.01); /* Slight scaling effect */
 }
 
 /* Navigation styling */
@@ -48,6 +77,11 @@ nav {
     font-family: 'Roboto', sans-serif; /* New font */
     background-color: #A0D5E1; /* Light teal background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s;
+}
+
+nav:hover {
+    background-color: #8FC9D3; /* Darker teal on hover */
 }
 
 nav ul {
@@ -67,13 +101,13 @@ nav a {
     text-decoration: none;
     padding: 15px 20px; /* Added horizontal padding */
     border-radius: 5px; /* Rounded corners */
-    transition: color 0.3s, transform 0.3s; /* Changed to only include color and transform */
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
-    background-color: transparent; /* Remove background on hover */
     color: #4A90E2; /* Change text color on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: transparent; /* No background hover effect */
+    transform: scale(1.05); /* Slightly enlarge text on hover */
 }
 
 /* Image section with overlay styling */
@@ -87,6 +121,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Removed hover effect on background image */
 }
 
 .overlay {
@@ -97,22 +132,24 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.intro {
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
 }
 
 /* Calculator container styling */
 .cal {
-    max-width: 400px;
+    width: 100%;
+    max-width: 350px; /* Fixed width */
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cal:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
 }
 
 /* Label styling */
@@ -120,6 +157,11 @@ nav a:hover {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.cal label:hover {
+    color: #4A90E2; /* Change color on hover */
 }
 
 /* Input field styling */
@@ -130,6 +172,12 @@ nav a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cal input[type="number"]:hover {
+    border-color: #4A90E2; /* Change border color on hover */
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.2); /* Add glow on hover */
 }
 
 /* Button styling */
@@ -142,13 +190,17 @@ nav a:hover {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-/* Button hover effect */
 .cal button:hover {
     background-color: #45a049;
     transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.cal button:active {
+    transform: scale(0.95); /* Shrink slightly on click */
 }
 
 /* Savings display styling */
@@ -157,6 +209,12 @@ nav a:hover {
     font-size: 18px;
     font-weight: bold;
     color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cal #savings:hover {
+    color: #4A90E2; /* Change color on hover */
+    transform: scale(1.05); /* Grow slightly on hover */
 }
 
 /* Blog and Contact form styling */
@@ -167,17 +225,12 @@ nav a:hover {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Footer styling */
-.footer {
-    background-color: #4A90E2; /* Same dynamic blue as header */
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+.blog:hover, .form:hover {
+    transform: translateY(-5px); /* Lift slightly on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Responsive Design */
@@ -197,132 +250,4 @@ nav a:hover {
     .cal {
         max-width: 90%;
     }
-}
-
-/* Blog styling */
-.blog {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.blog-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.blog-post {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-
-.blog-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-h2 {
-    font-size: 24px;
-    color: #333;
-}
-
-.preview {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #555;
-}
-
-.full-content {
-    display: none; /* Initially hide the full content */
-    font-size: 16px;
-    color: #555;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.read-more:hover {
-    background-color: #45a049;
-}
-
-/* Contact Us Form Styling */
-.form {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.form label {
-    display: block;
-    font-size: 16px;
-    margin: 10px 0 5px;
-    color: #333;
-}
-
-.form input,
-.form select,
-.form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form textarea {
-    resize: vertical;
-    height: 150px;
-}
-
-.form button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.form button:hover {
-    background-color: #45a049;
-}
-
-.form .required:after {
-    content: "*";
-    color: red;
-    margin-left: 5px;
-}
-
-/* Response message styling */
-.response-message {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #4CAF50;
-    text-align: center;
 }

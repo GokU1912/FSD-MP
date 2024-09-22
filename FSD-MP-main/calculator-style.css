@@ -41,35 +41,42 @@ h1:hover {
     letter-spacing: 2px; /* Widen the text spacing on hover */
 }
 
-/* Navigation link hover with underline effect */
-nav ul li a {
+/* Navigation styling */
+nav {
+    font-family: 'Roboto', sans-serif; /* New font */
+    background-color: #A0D5E1; /* Light teal background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s;
+}
+
+nav:hover {
+    background-color: #8FC9D3; /* Darker teal on hover */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 30px; /* Increased margin for more spacing */
+}
+
+nav a {
+    color: #333; /* Dark gray */
     text-decoration: none;
-    color: #fff;
-    padding: 5px 10px;
-    position: relative;
-    display: inline-block;
-    transition: color 0.3s ease;
+    padding: 15px 20px; /* Added horizontal padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: color 0.3s, transform 0.3s;
 }
 
-nav ul li a:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #ff6600;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-nav ul li a:hover:after {
-    visibility: visible;
-    width: 100%; /* Underline effect */
-}
-
-nav ul li a:hover {
-    color: #ff6600;
+nav a:hover {
+    color: #4A90E2; /* Change text color on hover */
+    background-color: transparent; /* No background hover effect */
+    transform: scale(1.05); /* Slightly enlarge text on hover */
 }
 
 /* Calculator section styling with box shadow animation */
@@ -120,51 +127,51 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
-    transform: scale(1.05); /* Slight scaling on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-}
+    background-color: #218838; 
+    transform: scale(1.05); /* Slight scaling on hover */ 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+} 
 
-button:active {
-    background-color: #1e7e34;
-    transform: scale(0.95); /* Reduce size on click */
-}
+button:active { 
+    background-color: #1e7e34; 
+    transform: scale(.95); /* Reduce size on click */ 
+} 
 
 /* Result text styling with dynamic hover effect */
 #result {
-    margin-top: 20px;
-    font-size: 1.2em;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
+    margin-top: 20px; 
+    font-size: 1.2em; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+} 
 
-#result:hover {
-    color: #ff6600; /* Change color on hover */
-    transform: scale(1.05); /* Grow slightly on hover */
-}
+#result:hover { 
+    color: #ff6600; /* Change color on hover */ 
+    transform: scale(1.05); /* Grow slightly on hover */ 
+} 
 
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+/* Footer Styling */ 
+footer { 
+    background-color: #333; 
+    color: #fff; 
+    text-align: center; 
+    padding: 10px; 
+    position: fixed; 
+    width: 100%; 
+    bottom: 0; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+} 
 
-footer:hover {
-    background-color: #444; /* Change footer color on hover */
-    transform: translateY(-5px); /* Move up slightly on hover */
-}
+footer:hover { 
+    background-color: #444; 
+    transform: translateY(-5px); 
+} 
 
-/* Blog post image hover effect with shadow */
-.blog-image {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Blog post image hover effect with shadow */ 
+.blog-image { 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+} 
 
-.blog-image:hover {
-    transform: scale(1.1); /* Enlarge the image on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+.blog-image:hover { 
+    transform: scale(1.1); /* Enlarge the image on hover */ 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow */ 
 }
